@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  telegram:
+    container_name: telegram_gpt
+    build:
+      context: .
+    volumes:
+      - .:/app
