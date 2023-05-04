@@ -2,4 +2,3 @@ asyncio
 python-telegram-bot
 openai
 python-dotenv
-wandb
