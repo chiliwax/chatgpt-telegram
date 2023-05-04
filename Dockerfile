@@ -5,8 +5,7 @@ WORKDIR /app
 #raspberry only (look like)
 RUN apt-get update
 RUN apt-get -y install curl
-RUN export PATH="$HOME/.cargo/bin:$PATH"
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sed 's#/proc/self/exe#\/bin\/sh#g' | sh -s -- -y
 RUN chmod +x rust.sh;./rust.sh -y
 
 COPY requirements.txt requirements.txt
